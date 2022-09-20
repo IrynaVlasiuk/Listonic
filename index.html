@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Listonic</title>
     <link href="styles.css" rel="stylesheet">
+    <script src="javascript/index.js" defer></script>
 </head>
 <body>
 <header>
@@ -14,14 +15,20 @@
     <section class="left-section">
         <div class="shopping-lists-title">Shopping lists</div>
         <div class="input-field input-field-list shown">
-            <span required="" contenteditable="" placeholder="Add item" class="add-item-list"></span>
+            <input required="" placeholder="Add item" class="new-list-item" id="newListItem">
             <label class="btn-flat add-item-btn label-icon"></label>
         </div>
-        <div class="lists">
-
+        <ul class="list__items"></ul>
+    </section>
+    <section class="right-section">
+        <div class="list__tasks_output">
+            <div class="input-field input-field-list shown">
+                <input required="" placeholder="Add item" class="new-task-item" id="newTaskItem">
+                <label class="btn-flat add-item-btn label-icon"></label>
+            </div>
+            <ul class="tasks__items"></ul>
         </div>
     </section>
-    <section class="right-section"></section>
 </main>
 </body>
 </html>
