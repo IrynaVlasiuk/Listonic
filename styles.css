@@ -9,8 +9,34 @@ body {
     content: attr(placeholder);
 }
 
-[contenteditable] {
-    outline: 0px solid transparent;
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0 0 0 / 20%);
+    padding: 0px;
+    z-index: 1;
+    right: -165px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    text-align: left;
+}
+
+.dropdown-content p {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.dropdown-content p:hover {
+    background-color: #bbb;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
 }
 
 header {
@@ -35,6 +61,7 @@ header .title {
 .container .left-section {
     width: 35%;
     background-color: rgb(128 128 128 / 13%);
+    position: relative;
 }
 
 .container .left-section .shopping-lists-title {
@@ -57,22 +84,35 @@ header .title {
     padding-left: calc(30px + 3rem);
     font-size: 18px;
     color: #707070;
-    width: 70%;
     contain: content;
     word-break: break-all;
     border: none;
-    padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 2px solid rgb(128 128 128 / 16%);
+}
+
+#newListItem {
     background-color: transparent;
+    width: 70%;
+    border-bottom: 2px solid rgb(128 128 128 / 16%);
+    padding-top: 10px;
+}
+
+#newTaskItem {
+    width: 90%;
+    border-radius: 5px;
+    padding-top: 16px;
 }
 
 #newListItem:focus, #newTaskItem:focus {
     outline: none;
 }
 
-#newListItem:active, #newTaskItem:active {
-    border: none;
+#newListItem:focus {
+    border-bottom: 2px solid rgb(128 128 128 / 16%);
+}
+
+#newListItem:active {
+    border-bottom: 2px solid rgb(128 128 128 / 16%);
 }
 
 .container .left-section .input-field-list .btn-flat, .container .right-section .input-field-list .btn-flat {
@@ -87,6 +127,9 @@ header .title {
 
 .container .left-section .list__items {
     padding-left: 0px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    direction: rtl;
 }
 
 .container .left-section .list__items .list__item {
@@ -96,6 +139,11 @@ header .title {
     color:#000000b3;
     font-size: 21px;
     position: relative;
+    width: 100%;
+    float: left;
+    text-align: left;
+    direction: ltr;
+    list-style: none;
 }
 
 .container .left-section .list__items .list__item .dots {
@@ -112,11 +160,11 @@ header .title {
 
 }
 
-.container .left-section .list__items .list__item:after {
+.container .left-section .list__items .list__item .dots:after {
     content: '\2807';
     font-size: 20px;
     position: absolute;
-    right: 10px;
+    right: 6px;
 }
 
 .container .left-section .list__items .list__item:hover {
@@ -142,4 +190,9 @@ header .title {
     left: 0;
     top: 150px;
     width: 90%;
+    display: none;
+}
+
+.container .right-section .display {
+    display: block;
 }
