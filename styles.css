@@ -98,7 +98,7 @@ header .title {
 }
 
 #newTaskItem {
-    width: 90%;
+    width: 80%;
     border-radius: 5px;
     padding-top: 16px;
 }
@@ -195,4 +195,42 @@ header .title {
 
 .container .right-section .display {
     display: block;
+    overflow-x: hidden;
+    max-height: 375px;
 }
+
+.container .right-section .input-field-list {
+    height: 50px;
+    border-bottom: 2px solid rgb(128 128 128 / 16%);
+}
+
+.container .right-section .list__tasks_output .tasks__items {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container .right-section .list__tasks_output .tasks__items .task__item {
+    padding: 10px 40px;
+    list-style: none;
+    border-bottom: 2px solid rgb(128 128 128 / 20%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .right-section .list__tasks_output .tasks__items .task__item:hover {
+    background-color: rgb(128 128 128 / 30%);
+    border-bottom: 2px solid rgb(128 128 128 / 20%);
+    cursor: pointer;
+}
+
+.container .right-section .list__tasks_output .tasks__items .task__item .delete-icon img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+
+.container .right-section .list__tasks_output .tasks__items .task__item .delete-icon img:hover {
+    width: 26px;
+    height: 26px;
+}
+
